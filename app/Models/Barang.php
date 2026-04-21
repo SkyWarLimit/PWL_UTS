@@ -34,4 +34,6 @@ class Barang extends Model
     {
         return $this->hasMany(PenjualanDetail::class, 'barang_id', 'barang_id');
     }
+
+    
 }

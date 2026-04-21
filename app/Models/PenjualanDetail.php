@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PenjualanDetail extends Model
 {
@@ -14,16 +15,16 @@ class PenjualanDetail extends Model
         'penjualan_id',
         'barang_id',
         'jumlah',
-        'harga_jual',
+        'harga',
     ];
 
-    public function penjualan()
-    {
-        return $this->belongsTo(Penjualan::class, 'penjualan_id', 'penjualan_id');
-    }
-
-    public function barang()
+    public function barang(): BelongsTo
     {
         return $this->belongsTo(Barang::class, 'barang_id', 'barang_id');
+    }
+
+    public function penjualan(): BelongsTo
+    {
+        return $this->belongsTo(Penjualan::class, 'penjualan_id', 'penjualan_id');
     }
 }
