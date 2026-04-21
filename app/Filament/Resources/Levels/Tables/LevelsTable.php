@@ -6,6 +6,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
 
 class LevelsTable
 {
@@ -13,7 +14,19 @@ class LevelsTable
     {
         return $table
             ->columns([
-                //
+                // 1. Kolom Kode Level (Dibuat Tebal)
+                TextColumn::make('level_kode')
+                    ->label('Kode Level')
+                    ->searchable()
+                    ->sortable()
+                    ->weight('bold')
+                    ->copyable(), // Memudahkan admin menyalin kode level
+
+                // 2. Kolom Nama Level
+                TextColumn::make('level_nama')
+                    ->label('Nama Level')
+                    ->searchable()
+                    ->sortable(),
             ])
             ->filters([
                 //
