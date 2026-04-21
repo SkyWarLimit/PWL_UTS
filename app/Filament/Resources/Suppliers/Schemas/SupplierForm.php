@@ -28,7 +28,7 @@ class SupplierForm
                                 ->maxLength(255),
                             TextInput::make('supplier_kode')
                                 ->label('Kode Supplier')
-                                ->placeholder('Contoh: SUP-001')
+                                ->placeholder('Contoh: SUP')
                                 ->required()
                                 ->unique(ignoreRecord: true)
                                 ->maxLength(10),
