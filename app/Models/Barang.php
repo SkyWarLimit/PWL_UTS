@@ -17,11 +17,12 @@ class Barang extends Model
         'barang_nama',
         'harga_beli',
         'harga_jual',
+        'image',
     ];
 
     public function kategori()
     {
-        return $this->belongsTo(Kategori::class, 'kategori_id');
+    return $this->belongsTo(Kategori::class, 'kategori_id', 'kategori_id');
     }
 
     public function stok()

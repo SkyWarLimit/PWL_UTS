@@ -16,4 +16,9 @@ class EditBarang extends EditRecord
             DeleteAction::make(),
         ];
     }
+
+    protected function getFormActions(): array
+    {
+        return [];
+    }
 }
